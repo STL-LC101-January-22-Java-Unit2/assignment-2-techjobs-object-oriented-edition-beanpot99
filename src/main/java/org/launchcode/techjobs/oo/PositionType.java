@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.Objects;
+
 public class PositionType {
 
     private int id;
@@ -15,7 +17,21 @@ public class PositionType {
         this();
         this.value = value;
     }
-
+    @Override
+    public String toString(){
+        return value;
+    }
+    @Override
+    public boolean equals(Object p){
+        if(this==p)return true;
+        if(p==null)return false;
+        if(!(p instanceof PositionType))return false;
+        return getId() == ((PositionType) p).getId();
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
 
     // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
