@@ -40,5 +40,12 @@ public class JobTest {
     public void testJobsForEquality(){
         assertFalse(String.valueOf(false),job4.equals(job5));
 }
-
+@Test
+    public void testingToString(){
+        String jobInfo = job4.toString();
+        int firstLine = jobInfo.indexOf("\n");
+        int lastLine = jobInfo.lastIndexOf("\n");
+        assertEquals(0,firstLine);
+        assertEquals(jobInfo.length()-1,lastLine);
+}
 }
