@@ -23,6 +23,7 @@ public class Job {
         nextId ++;
     }
     public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetancy){
+        this();
         this.name = aName;
         this.employer = aEmployer;
         this.location = aLocation;
@@ -70,7 +71,7 @@ public class Job {
     }
     @Override
     public boolean equals(Object j){
-        if(this==j)return true;
+        //if(this==j)return true;
         if(j==null)return false;
         if(!(j instanceof Job))return false;
         return getId()==((Job) j).getId();
