@@ -68,6 +68,17 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+    @Override
+    public boolean equals(Object j){
+        if(this==j)return true;
+        if(j==null)return false;
+        if(!(j instanceof Job))return false;
+        return getId()==((Job) j).getId();
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
