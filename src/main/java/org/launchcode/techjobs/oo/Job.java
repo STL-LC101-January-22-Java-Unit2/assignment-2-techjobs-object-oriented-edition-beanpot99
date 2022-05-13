@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -79,6 +80,41 @@ public class Job {
     @Override
     public int hashCode() {
         return Objects.hash(getId());
+    }
+
+    @Override
+    public String toString() {
+        //String stringId = String.valueOf(this.getId());
+        String stringName = this.getName();
+        String stringEmployer = String.valueOf(this.getEmployer());
+        String stringLocation = String.valueOf(this.getLocation());
+        String stringPosition = String.valueOf(this.getPositionType());
+        String stringCompetency = String.valueOf(this.getCoreCompetency());
+
+        if (stringName == "") {
+            stringName = "Data not available";
+        }
+        if (stringEmployer == "") {
+            stringEmployer = "Data not available";
+        }
+        if (stringLocation == "") {
+            stringLocation = "Data not available";
+        }
+        if (stringPosition == "") {
+            stringPosition = "Data not available";
+        }
+        if (stringCompetency == "") {
+            stringCompetency = "Data not available";
+        }
+        /*if (stringName == null && stringEmployer == null && stringLocation == null && stringPosition == null && stringCompetency == null ) {
+            if(this.getId()!=0){
+                return "OOPS! This job does not seem to exist.";
+            }
+
+        }*/
+            return "\n" + "ID: " + this.getId() + "\n" + "Name: " + stringName + "\n" + "Employer: " + stringEmployer + "\n" + "Location: " + stringLocation + "\n" + "Position Type: " + stringPosition + "\n" + "Core Competency: " + stringCompetency + "\n";
+
+
     }
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the

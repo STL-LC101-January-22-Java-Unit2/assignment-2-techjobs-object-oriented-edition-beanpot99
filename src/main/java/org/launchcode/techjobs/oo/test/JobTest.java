@@ -41,11 +41,22 @@ public class JobTest {
         assertFalse(String.valueOf(false),job4.equals(job5));
 }
 @Test
-    public void testingToString(){
-        String jobInfo = job4.toString();
-        int firstLine = jobInfo.indexOf("\n");
-        int lastLine = jobInfo.lastIndexOf("\n");
-        assertEquals(0,firstLine);
-        assertEquals(jobInfo.length()-1,lastLine);
+    public void blankLineBeforeAndAfter(){
+     assertEquals(job4.toString().charAt(0),'\n');
+     assertEquals(job4.toString().charAt(job4.toString().length()-1),'\n');
 }
+@Test
+    public void eachStringContainsLabelAndData(){
+        assertEquals("\n" + "ID: " + job4.getId() + "\n" + "Name: " + job4.getName() + "\n" + "Employer: " + job4.getEmployer() + "\n" + "Location: " + job4.getLocation() + "\n" + "Position Type: " + job4.getPositionType() + "\n" + "Core Competency: " + job4.getCoreCompetency() + "\n", job4.toString());
+}
+@Test
+    public void emptyFieldStringReturn(){
+        Job job6 = new Job("Scrum Master", new Employer("Federal Reserve"), new Location(""), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+        assertTrue(job6.toString().contains("Data not available"));
+}
+/*@Test
+    public void onlyContainsIdField(){
+        Job job7 = new Job();
+        assertEquals("OOPS! This job does not seem to exist.", job7.toString());
+}*/
 }
