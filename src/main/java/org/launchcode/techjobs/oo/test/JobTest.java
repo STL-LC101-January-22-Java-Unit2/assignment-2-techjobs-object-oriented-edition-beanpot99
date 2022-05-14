@@ -41,9 +41,7 @@ public class JobTest {
         assertFalse(String.valueOf(false),jobFour.equals(job5));
 }
 @Test
-    public void blankLineBeforeAndAfter(){
-     assertEquals(jobFour.toString().charAt(0),'\n');
-     assertEquals(jobFour.toString().charAt(jobFour.toString().length()-1),'\n');
+    public void blankLineBeforeAndAfter(){assertEquals(jobFour.toString().charAt(0),'\n');assertEquals(jobFour.toString().charAt(jobFour.toString().length()-1),'\n');
 }
 @Test
     public void eachStringContainsLabelAndData(){

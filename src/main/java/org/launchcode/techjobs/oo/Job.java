@@ -5,10 +5,6 @@ import java.util.Objects;
 
 public class Job extends JobField{
 
-
-    //private int id;
-    //private static int nextId = 1;
-
     private String name;
     private Employer employer;
 
@@ -30,10 +26,6 @@ public class Job extends JobField{
         this.positionType = aPositionType;
         this.coreCompetency = aCoreCompetancy;
     }
-    /*public int getId() {
-        return id;
-    }*/
-
     public Employer getEmployer() {
         return employer;
     }
@@ -69,18 +61,6 @@ public class Job extends JobField{
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
-    /*@Override
-    public boolean equals(Object j){
-        //if(this==j)return true;
-        if(j==null)return false;
-        if(!(j instanceof Job))return false;
-        return getId()==((Job) j).getId();
-    }*/
-    /*@Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }*/
-
     @Override
     public String toString() {
         //String stringId = String.valueOf(this.getId());
@@ -105,12 +85,6 @@ public class Job extends JobField{
         if (stringCompetency == "") {
             stringCompetency = "Data not available";
         }
-        /*if (stringName == null && stringEmployer == null && stringLocation == null && stringPosition == null && stringCompetency == null ) {
-            if(this.getId()!=0){
-                return "OOPS! This job does not seem to exist.";
-            }
-
-        }*/
             return "\n" + "ID: " + this.getId() + "\n" + "Name: " + stringName + "\n" + "Employer: " + stringEmployer + "\n" + "Location: " + stringLocation + "\n" + "Position Type: " + stringPosition + "\n" + "Core Competency: " + stringCompetency + "\n";
 
 
