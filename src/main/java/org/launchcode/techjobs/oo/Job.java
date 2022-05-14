@@ -3,11 +3,11 @@ package org.launchcode.techjobs.oo;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Job {
+public class Job extends JobField{
 
 
-    private int id;
-    private static int nextId = 1;
+    //private int id;
+    //private static int nextId = 1;
 
     private String name;
     private Employer employer;
@@ -20,20 +20,19 @@ public class Job {
 
     private CoreCompetency coreCompetency;
     public Job(){
-        id=nextId;
-        nextId ++;
+        super();
     }
     public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetancy){
-        this();
+        super();
         this.name = aName;
         this.employer = aEmployer;
         this.location = aLocation;
         this.positionType = aPositionType;
         this.coreCompetency = aCoreCompetancy;
     }
-    public int getId() {
+    /*public int getId() {
         return id;
-    }
+    }*/
 
     public Employer getEmployer() {
         return employer;
@@ -70,17 +69,17 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
-    @Override
+    /*@Override
     public boolean equals(Object j){
         //if(this==j)return true;
         if(j==null)return false;
         if(!(j instanceof Job))return false;
         return getId()==((Job) j).getId();
-    }
-    @Override
+    }*/
+    /*@Override
     public int hashCode() {
         return Objects.hash(getId());
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -117,13 +116,4 @@ public class Job {
 
     }
 
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
-
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match.
-
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
 }
