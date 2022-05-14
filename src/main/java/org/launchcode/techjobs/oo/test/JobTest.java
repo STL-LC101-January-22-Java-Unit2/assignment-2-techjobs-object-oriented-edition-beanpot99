@@ -14,21 +14,21 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
-    Job job1;
-    Job job2;
-    Job job4;
+    Job jobOne;
+    Job jobTwo;
+    Job jobFour;
     Job job5;
     @Before
     public void createJobObjects(){
-        job1=new Job();
-        job2 = new Job();
-        job4= new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+        jobOne=new Job();
+        jobTwo = new Job();
+        jobFour= new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
         job5= new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
     }
 @Test
     public void testSettingJobId(){
-        assertFalse(String.valueOf(false), job1.equals(job2));
-        assertEquals(1,abs(job1.getId()- job2.getId()));
+        assertFalse(String.valueOf(false), jobOne.equals(jobTwo));
+        assertEquals(1,abs(jobOne.getId()- jobTwo.getId()));
 }
 
 @Test
@@ -38,16 +38,16 @@ public class JobTest {
 }
 @Test
     public void testJobsForEquality(){
-        assertFalse(String.valueOf(false),job4.equals(job5));
+        assertFalse(String.valueOf(false),jobFour.equals(job5));
 }
 @Test
     public void blankLineBeforeAndAfter(){
-     assertEquals(job4.toString().charAt(0),'\n');
-     assertEquals(job4.toString().charAt(job4.toString().length()-1),'\n');
+     assertEquals(jobFour.toString().charAt(0),'\n');
+     assertEquals(jobFour.toString().charAt(jobFour.toString().length()-1),'\n');
 }
 @Test
     public void eachStringContainsLabelAndData(){
-        assertEquals("\n" + "ID: " + job4.getId() + "\n" + "Name: " + job4.getName() + "\n" + "Employer: " + job4.getEmployer() + "\n" + "Location: " + job4.getLocation() + "\n" + "Position Type: " + job4.getPositionType() + "\n" + "Core Competency: " + job4.getCoreCompetency() + "\n", job4.toString());
+        assertEquals("\n" + "ID: " + jobFour.getId() + "\n" + "Name: " + jobFour.getName() + "\n" + "Employer: " + jobFour.getEmployer() + "\n" + "Location: " + jobFour.getLocation() + "\n" + "Position Type: " + jobFour.getPositionType() + "\n" + "Core Competency: " + jobFour.getCoreCompetency() + "\n", jobFour.toString());
 }
 @Test
     public void emptyFieldStringReturn(){
