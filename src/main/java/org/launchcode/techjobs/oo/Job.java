@@ -3,8 +3,9 @@ package org.launchcode.techjobs.oo;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Job extends JobField{
-
+public class Job {
+    private int id;
+    private static int nextId = 1;
     private String name;
     private Employer employer;
 
@@ -16,10 +17,11 @@ public class Job extends JobField{
 
     private CoreCompetency coreCompetency;
     public Job(){
-        //super();
+        this.id=nextId;
+        nextId++;
     }
     public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetancy){
-        //super();
+        this();
         this.name = aName;
         this.employer = aEmployer;
         this.location = aLocation;
@@ -61,6 +63,11 @@ public class Job extends JobField{
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+    public int getId() {
+        return id;
+    }
+
+
     @Override
     public String toString() {
         //String stringId = String.valueOf(this.getId());
@@ -88,6 +95,19 @@ public class Job extends JobField{
             return "\n" + "ID: " + this.getId() + "\n" + "Name: " + stringName + "\n" + "Employer: " + stringEmployer + "\n" + "Location: " + stringLocation + "\n" + "Position Type: " + stringPosition + "\n" + "Core Competency: " + stringCompetency + "\n";
 
 
+    }
+    @Override
+    public boolean equals(Object p){
+        if(this==p)return true;
+        if(p==null)return false;
+        if(!(p instanceof JobField))return false;
+        Job testerJob = ((Job) p);
+        return getId() == testerJob.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 
 }
