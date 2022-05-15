@@ -59,6 +59,7 @@ public class JobTest {
         assertFalse(jobSeven.equals(jobEight));
         assertTrue(jobSeven.equals(jobNine));
         assertNotEquals(jobEight.getId(),jobSeven.getId());
+        assertTrue(jobEight.equals(jobEight));
 }
 @Test
     public void testToStringStartsAndEndsWithNewLine(){
