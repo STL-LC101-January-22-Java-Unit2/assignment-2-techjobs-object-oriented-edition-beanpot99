@@ -47,7 +47,7 @@ public class JobTest {
 }
 @Test
     public void testJobsForEquality(){
-        assertFalse(jobFour.equals(job5));
+        assertFalse(jobFour==job5);
 }
 @Test
     public void blankLineBeforeAndAfter(){assertEquals(jobFour.toString().charAt(0),'\n');assertEquals(jobFour.toString().charAt(jobFour.toString().length()-1),'\n');
