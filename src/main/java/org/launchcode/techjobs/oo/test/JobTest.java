@@ -57,11 +57,13 @@ public class JobTest {
     Job jobEight=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
         assertFalse(jobSeven.equals(jobEight));
         assertTrue(jobEight.equals(jobEight));
+        assertNotEquals(jobEight.getId(),jobSeven.getId());
 }
 @Test
     public void testToStringStartsAndEndsWithNewLine(){
         assertEquals(jobFour.toString().charAt(0),'\n');
         assertEquals(jobFour.toString().charAt(jobFour.toString().length()-1),'\n');
+
 }
 @Test
     public void testToStringContainsCorrectLabelsAndData(){
