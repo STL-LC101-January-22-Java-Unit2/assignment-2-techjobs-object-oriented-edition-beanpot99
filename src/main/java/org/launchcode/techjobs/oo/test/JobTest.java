@@ -48,7 +48,7 @@ public class JobTest {
 }
 @Test
     public void testJobsForEquality(){
-        assertFalse(jobFour==job5);
+        assertFalse(jobFour.equals(job5));
 }
 @Test
     public void testToStringStartsAndEndsWithNewLine(){
