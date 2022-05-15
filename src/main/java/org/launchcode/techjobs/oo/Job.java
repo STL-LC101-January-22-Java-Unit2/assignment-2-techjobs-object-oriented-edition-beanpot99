@@ -92,7 +92,12 @@ public class Job {
         if (stringCompetency == "") {
             stringCompetency = "Data not available";
         }
-            return "\n" + "ID: " + this.getId() + "\n" + "Name: " + stringName + "\n" + "Employer: " + stringEmployer + "\n" + "Location: " + stringLocation + "\n" + "Position Type: " + stringPosition + "\n" + "Core Competency: " + stringCompetency + "\n";
+            return "\nID: %d\n" +
+                    "Name: %s\n" +
+                    "Employer: %s\n" +
+                    "Location: %s\n" +
+                    "Position Type: %s\n" +
+                    "Core Competency: %s\n";
 
 
     }

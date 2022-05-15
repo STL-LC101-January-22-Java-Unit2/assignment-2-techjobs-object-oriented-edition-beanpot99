@@ -55,7 +55,12 @@ public class JobTest {
 }
 @Test
     public void eachStringContainsLabelAndData(){
-        assertEquals("\n" + "ID: " + jobFour.getId() + "\n" + "Name: " + jobFour.getName() + "\n" + "Employer: " + jobFour.getEmployer() + "\n" + "Location: " + jobFour.getLocation() + "\n" + "Position Type: " + jobFour.getPositionType() + "\n" + "Core Competency: " + jobFour.getCoreCompetency() + "\n", jobFour.toString());
+        assertEquals("\nID: %d\n" +
+                "Name: %s\n" +
+                "Employer: %s\n" +
+                "Location: %s\n" +
+                "Position Type: %s\n" +
+                "Core Competency: %s\n", jobFour.toString());
 }
 @Test
     public void emptyFieldStringReturn(){
