@@ -53,7 +53,9 @@ public class JobTest {
 }
 @Test
     public void testJobsForEquality(){
-        assertFalse(jobFour.equals(job5));
+    Job jobSeven=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+    Job jobEight=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+        assertFalse(jobSeven.equals(jobEight));
 }
 @Test
     public void testToStringStartsAndEndsWithNewLine(){
