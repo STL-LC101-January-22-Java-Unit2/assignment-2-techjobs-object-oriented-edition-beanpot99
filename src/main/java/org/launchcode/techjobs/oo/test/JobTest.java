@@ -59,10 +59,10 @@ public class JobTest {
     Job jobEight = new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
     Job jobNine= new Job();
     jobNine = jobSeven;
-    /*assertFalse(jobSeven.equals(jobEight));
+    assertFalse(jobSeven.equals(jobEight));
     assertTrue(jobSeven.equals(jobNine));
     assertNotEquals(jobEight.getId(), jobSeven.getId());
-    assertTrue(jobEight.equals(jobEight));*/
+    assertTrue(jobEight.equals(jobEight));
     assertFalse(jobEight==jobSeven);
     assertTrue(jobNine==jobSeven);
 }
