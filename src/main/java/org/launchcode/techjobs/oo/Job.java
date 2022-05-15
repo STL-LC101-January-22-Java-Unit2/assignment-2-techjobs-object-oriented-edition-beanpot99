@@ -16,10 +16,10 @@ public class Job extends JobField{
 
     private CoreCompetency coreCompetency;
     public Job(){
-        super();
+        //super();
     }
     public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetancy){
-        super();
+        //super();
         this.name = aName;
         this.employer = aEmployer;
         this.location = aLocation;
