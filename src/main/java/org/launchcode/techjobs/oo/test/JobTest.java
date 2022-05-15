@@ -30,10 +30,12 @@ public class JobTest {
 @Test
     public void testSettingJobId(){
         //assertFalse(String.valueOf(false), empty1.equals(empty2));
-        assertEquals(1,abs(empty1.getId()- empty2.getId()));
+        assertTrue(abs(empty1.getId()- empty2.getId())==1);
 }
 
-@Test
+
+
+    @Test
     public void testJobConstructorSetsAllFields(){
     Job jobThree=new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
     assertEquals(jobThree.getName().toString(),"Product tester");
