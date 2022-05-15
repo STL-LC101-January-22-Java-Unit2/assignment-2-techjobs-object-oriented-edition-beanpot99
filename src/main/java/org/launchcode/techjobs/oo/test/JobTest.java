@@ -14,10 +14,10 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
-    Job jobOne=new Job();
-    Job jobTwo=new Job();
+    //Job jobOne=new Job();
+    //Job jobTwo=new Job();
     Job jobFour=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
-    Job job5=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+    Job job5=new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
     @Before
     public void createJobObjects(){
         //Job jobOne=new Job();
@@ -27,8 +27,8 @@ public class JobTest {
     }
 @Test
     public void testSettingJobId(){
-        assertFalse(String.valueOf(false), jobOne.equals(jobTwo));
-        assertEquals(1,abs(jobOne.getId()- jobTwo.getId()));
+        assertFalse(String.valueOf(false), jobFour.equals(job5));
+        assertEquals(1,abs(jobFour.getId()- job5.getId()));
 }
 
 @Test
@@ -66,13 +66,13 @@ public class JobTest {
 }
 @Test
     public void testToStringHandlesEmptyField(){
-        Job job6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-        assertEquals("\nID: "+ job6.getId() +"\n" +
+        //Job job6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        assertEquals("\nID: "+ job5.getId() +"\n" +
                 "Name: "+"Data not available"+"\n" +
                 "Employer: "+"Data not available"+"\n" +
                 "Location: "+"Data not available"+"\n" +
                 "Position Type: "+"Data not available"+"\n" +
-                "Core Competency: "+"Data not available"+"\n",job6.toString());
+                "Core Competency: "+"Data not available"+"\n",job5.toString());
 }
 /*@Test
     public void onlyContainsIdField(){
