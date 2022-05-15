@@ -43,6 +43,7 @@ public class JobTest {
     assertTrue(jobThree.getLocation() instanceof Location);
     assertTrue(jobThree.getPositionType() instanceof PositionType);
     assertTrue(jobThree.getCoreCompetency() instanceof CoreCompetency);
+    assertTrue(jobThree instanceof JobField);
     //job3.getEmployer() instanceof Employer && job3.getLocation() instanceof Location && job3.getPositionType() instanceof PositionType && job3.getCoreCompetency() instanceof CoreCompetency
 }
 @Test
