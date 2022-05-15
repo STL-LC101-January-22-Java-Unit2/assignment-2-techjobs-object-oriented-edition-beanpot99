@@ -40,7 +40,8 @@ public abstract class JobField {
         if(this==p)return true;
         if(p==null)return false;
         if(!(p instanceof JobField))return false;
-        return getId() == ((JobField) p).getId();
+        JobField testerJob = ((JobField) p);
+        return getId() == testerJob.getId();
     }
 
     @Override
