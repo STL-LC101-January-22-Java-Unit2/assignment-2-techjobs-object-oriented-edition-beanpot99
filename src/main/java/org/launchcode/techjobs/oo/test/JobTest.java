@@ -14,16 +14,16 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
-    Job jobOne;
-    Job jobTwo;
-    Job jobFour;
-    Job job5;
+    Job jobOne=new Job();
+    Job jobTwo=new Job();
+    Job jobFour=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+    Job job5=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
     @Before
     public void createJobObjects(){
-        jobOne=new Job();
-        jobTwo = new Job();
-        jobFour= new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
-        job5= new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+        //Job jobOne=new Job();
+        //Job jobTwo = new Job();
+        //jobFour= new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+        //job5= new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
     }
 @Test
     public void testSettingJobId(){
