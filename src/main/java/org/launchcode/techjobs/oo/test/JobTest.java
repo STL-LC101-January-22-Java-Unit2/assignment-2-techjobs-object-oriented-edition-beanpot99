@@ -55,17 +55,17 @@ public class JobTest {
 }
 @Test
     public void eachStringContainsLabelAndData(){
-        assertEquals("\nID: %d\n" +
-                "Name: %s\n" +
-                "Employer: %s\n" +
-                "Location: %s\n" +
-                "Position Type: %s\n" +
-                "Core Competency: %s\n", jobFour.toString());
+        assertEquals("\nID: "+ jobFour.getId()+"\n" +
+                "Name: "+jobFour.getName()+"\n" +
+                "Employer: "+jobFour.getEmployer()+"\n" +
+                "Location: "+jobFour.getLocation()+"\n" +
+                "Position Type: "+jobFour.getPositionType()+"\n" +
+                "Core Competency: "+jobFour.getCoreCompetency()+"\n", jobFour.toString());
 }
 @Test
     public void emptyFieldStringReturn(){
-        Job job6 = new Job("Scrum Master", new Employer("Federal Reserve"), new Location(""), new PositionType("Junior"), new CoreCompetency("Teamwork"));
-        assertTrue(job6.toString().contains("Data not available"));
+        Job job6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        assertEquals("\nID: "+ job6.getId()+"\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n",job6.toString());
 }
 /*@Test
     public void onlyContainsIdField(){
