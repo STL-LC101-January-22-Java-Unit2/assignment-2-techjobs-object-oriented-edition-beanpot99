@@ -65,7 +65,12 @@ public class JobTest {
 @Test
     public void emptyFieldStringReturn(){
         Job job6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-        assertEquals("\nID: "+ job6.getId()+"\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n",job6.toString());
+        assertEquals("\nID: "+ job6.getId() +"\n" +
+                "Name: "+"Data not available"+"\n" +
+                "Employer: "+"Data not available"+"\n" +
+                "Location: "+"Data not available"+"\n" +
+                "Position Type: "+"Data not available"+"\n" +
+                "Core Competency: "+"Data not available"+"\n",job6.toString());
 }
 /*@Test
     public void onlyContainsIdField(){
