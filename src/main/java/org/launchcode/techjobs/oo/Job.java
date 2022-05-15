@@ -71,33 +71,33 @@ public class Job {
     @Override
     public String toString() {
         //String stringId = String.valueOf(this.getId());
-        String stringName = this.getName();
-        String stringEmployer = String.valueOf(this.getEmployer());
-        String stringLocation = String.valueOf(this.getLocation());
-        String stringPosition = String.valueOf(this.getPositionType());
-        String stringCompetency = String.valueOf(this.getCoreCompetency());
+        //String stringName = this.getName();
+        String stringEmployer =employer.toString();
+        String stringLocation = location.toString();
+        String stringPosition = positionType.toString();
+        String stringCompetency = coreCompetency.toString();
 
-        if (stringName == "") {
-            stringName = "Data not available";
+        if (name == "") {
+            name = "Data not available";
         }
-        if (stringEmployer == "") {
+        if (employer.toString() == "") {
             stringEmployer = "Data not available";
         }
-        if (stringLocation == "") {
+        if (location.toString() == "") {
             stringLocation = "Data not available";
         }
-        if (stringPosition == "") {
+        if (positionType.toString() == "") {
             stringPosition = "Data not available";
         }
-        if (stringCompetency == "") {
+        if (coreCompetency.toString() == "") {
             stringCompetency = "Data not available";
         }
-            return "\nID: "+ this.getId()+"\n" +
-                    "Name: "+this.getName()+"\n" +
-                    "Employer: "+this.getEmployer()+"\n" +
-                    "Location: "+this.getLocation()+"\n" +
-                    "Position Type: "+this.getPositionType()+"\n" +
-                    "Core Competency: "+this.getCoreCompetency()+"\n";
+            return "\nID: "+ id +"\n" +
+                    "Name: "+name+"\n" +
+                    "Employer: "+stringEmployer+"\n" +
+                    "Location: "+stringLocation+"\n" +
+                    "Position Type: "+stringPosition+"\n" +
+                    "Core Competency: "+stringCompetency+"\n";
 
 
     }
