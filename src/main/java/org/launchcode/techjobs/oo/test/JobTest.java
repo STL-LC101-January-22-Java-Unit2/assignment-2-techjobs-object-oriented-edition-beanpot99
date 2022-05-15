@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.launchcode.techjobs.oo.*;
 
+import java.lang.reflect.Field;
+
 import static java.lang.Math.abs;
 import static org.junit.Assert.*;
 
@@ -52,14 +54,15 @@ public class JobTest {
     assertTrue(jobThree.getLocation() instanceof JobField);
 }
 @Test
-    public void testJobsForEquality(){
-    Job jobSeven=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
-    Job jobEight=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
-    Job jobNine=jobSeven;
-        assertFalse(jobSeven.equals(jobEight));
-        assertTrue(jobSeven.equals(jobNine));
-        assertNotEquals(jobEight.getId(),jobSeven.getId());
-        assertTrue(jobEight.equals(jobEight));
+    public void testJobsForEquality() {
+    Job jobSeven = new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+    Job jobEight = new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
+    Job jobNine= new Job();
+    jobNine = jobSeven;
+    assertFalse(jobSeven.equals(jobEight));
+    assertTrue(jobSeven.equals(jobNine));
+    assertNotEquals(jobEight.getId(), jobSeven.getId());
+    assertTrue(jobEight.equals(jobEight));
 }
 @Test
     public void testToStringStartsAndEndsWithNewLine(){
