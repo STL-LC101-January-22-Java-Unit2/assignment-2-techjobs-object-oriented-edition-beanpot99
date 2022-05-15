@@ -51,10 +51,12 @@ public class JobTest {
         assertFalse(jobFour==job5);
 }
 @Test
-    public void blankLineBeforeAndAfter(){assertEquals(jobFour.toString().charAt(0),'\n');assertEquals(jobFour.toString().charAt(jobFour.toString().length()-1),'\n');
+    public void testToStringStartsAndEndsWithNewLine(){
+        assertEquals(jobFour.toString().charAt(0),'\n');
+        assertEquals(jobFour.toString().charAt(jobFour.toString().length()-1),'\n');
 }
 @Test
-    public void eachStringContainsLabelAndData(){
+    public void testToStringContainsCorrectLabelsAndData(){
         assertEquals("\nID: "+ jobFour.getId()+"\n" +
                 "Name: "+jobFour.getName()+"\n" +
                 "Employer: "+jobFour.getEmployer()+"\n" +
@@ -63,7 +65,7 @@ public class JobTest {
                 "Core Competency: "+jobFour.getCoreCompetency()+"\n", jobFour.toString());
 }
 @Test
-    public void emptyFieldStringReturn(){
+    public void testToStringHandlesEmptyField(){
         Job job6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertEquals("\nID: "+ job6.getId() +"\n" +
                 "Name: "+"Data not available"+"\n" +
