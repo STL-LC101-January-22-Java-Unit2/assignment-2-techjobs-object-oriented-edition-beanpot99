@@ -33,8 +33,17 @@ public class JobTest {
 
 @Test
     public void testJobConstructorSetsAllFields(){
-    Job job3=new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    assertTrue(job3.getEmployer() instanceof Employer && job3.getLocation() instanceof Location && job3.getPositionType() instanceof PositionType && job3.getCoreCompetency() instanceof CoreCompetency);
+    Job jobThree=new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    assertEquals(jobThree.getName().toString(),"Product tester");
+    assertEquals(jobThree.getEmployer().toString(),"ACME");
+    assertEquals(jobThree.getLocation().toString(),"Desert");
+    assertEquals(jobThree.getPositionType().toString(),"Quality control");
+    assertEquals(jobThree.getCoreCompetency().toString(),"Persistence");
+    assertTrue(jobThree.getEmployer() instanceof Employer);
+    assertTrue(jobThree.getLocation() instanceof Location);
+    assertTrue(jobThree.getPositionType() instanceof PositionType);
+    assertTrue(jobThree.getCoreCompetency() instanceof CoreCompetency);
+    //job3.getEmployer() instanceof Employer && job3.getLocation() instanceof Location && job3.getPositionType() instanceof PositionType && job3.getCoreCompetency() instanceof CoreCompetency
 }
 @Test
     public void testJobsForEquality(){
