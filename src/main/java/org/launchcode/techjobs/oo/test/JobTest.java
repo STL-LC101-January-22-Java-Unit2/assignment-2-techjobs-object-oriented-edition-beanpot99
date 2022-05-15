@@ -18,6 +18,8 @@ public class JobTest {
     //Job jobTwo=new Job();
     Job jobFour=new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
     Job job5=new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+    Job empty1 = new Job();
+    Job empty2 = new Job();
     @Before
     public void createJobObjects(){
         //Job jobOne=new Job();
@@ -27,8 +29,8 @@ public class JobTest {
     }
 @Test
     public void testSettingJobId(){
-        assertFalse(String.valueOf(false), jobFour.equals(job5));
-        assertEquals(1,abs(jobFour.getId()- job5.getId()));
+        assertFalse(String.valueOf(false), empty1.equals(empty2));
+        assertEquals(1,abs(empty1.getId()- empty2.getId()));
 }
 
 @Test
