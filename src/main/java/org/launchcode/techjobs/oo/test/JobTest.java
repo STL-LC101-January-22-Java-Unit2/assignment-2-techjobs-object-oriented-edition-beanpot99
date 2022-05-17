@@ -57,8 +57,7 @@ public class JobTest {
     public void testJobsForEquality() {
     Job jobSeven = new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
     Job jobEight = new Job("Scrum Master", new Employer("Federal Reserve"), new Location("Saint Louis"), new PositionType("Junior"), new CoreCompetency("Teamwork"));
-    Job jobNine= new Job();
-    jobNine = jobSeven;
+    Job jobNine=jobSeven;
     assertFalse(jobSeven.equals(jobEight));
     assertTrue(jobSeven.equals(jobNine));
     assertNotEquals(jobEight.getId(), jobSeven.getId());
